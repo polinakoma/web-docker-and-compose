@@ -1,0 +1,55 @@
+version: '3'
+
+volumes:
+  postgres_data:
+
+networks:
+    backend:
+    frontend:
+
+services:
+  backend:
+    container_name: backend-pub
+    build: 
+      context: backend
+      dockerfile: Dockerfile.pub
+    image: backend-pub
+    ports:
+      - "4000:3000"
+    env_file:
+      - ./.env
+    networks:
+      - backend
+    
+  frontend:
+    container_name: frontend-pub
+    build: 
+      context: frontend
+      dockerfile: Dockerfile.pub
+    image: frontend-pub
+    ports: 
+      - "8080:80"
+    env_file:
+      - ./.env
+    networks:
+      - frontend
+
+  postgres:
+    image: postgres
+    restart: always
+    env_file:
+      - ./.env
+    volumes: 
+      - postgres_data:/data/postgres
+    networks:
+      - backend
+      
+  adminer:
+    image: adminer
+    restart: always
+    ports: 
+      - '8081:8080'
+    networks:
+      - backend
+  
+  
