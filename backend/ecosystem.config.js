@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-        name: 'kupipodaryday-backend',
+        name: 'backend',
         script: './dist/main.js',
       }],
   };

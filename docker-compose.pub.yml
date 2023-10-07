@@ -9,11 +9,11 @@ networks:
 
 services:
   backend:
-    container_name: backend-pub
+    container_name: backend
     build: 
       context: backend
       dockerfile: Dockerfile.pub
-    image: backend-pub
+    image: backend
     restart: always
     ports:
       - "4000:3000"
@@ -25,11 +25,11 @@ services:
       - postgres
     
   frontend:
-    container_name: frontend-pub
+    container_name: frontend
     build: 
       context: frontend
       dockerfile: Dockerfile.pub
-    image: frontend-pub
+    image: frontend
     ports: 
       - "8080:80"
     env_file:
