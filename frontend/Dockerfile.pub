@@ -13,7 +13,7 @@ RUN npm run build
 
 
 # следующий стэйдж 
-FROM nginx:latest-alpine AS frontend
+FROM nginx:latest AS frontend
 
 WORKDIR /app
 
