@@ -16,7 +16,7 @@ services:
     image: backend
     restart: always
     ports:
-      - "4000:3000"
+      - "4000:3001"
     env_file:
       - ./.env
     networks:
