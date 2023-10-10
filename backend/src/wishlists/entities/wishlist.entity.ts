@@ -38,10 +38,10 @@ export class Wishlist {
   @ApiProperty({ example: 'Вишлист' })
   name: string;
 
-  @Column()
+  @Column({ default: 'Мои желания' })
   @MaxLength(1500)
   @IsString()
-  @IsOptional({ default: 'Мои желания' })
+  @IsOptional()
   description: string;
 
   @Column()
