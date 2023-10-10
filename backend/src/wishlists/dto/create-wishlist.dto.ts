@@ -16,8 +16,7 @@ export class CreateWishlistDto {
 
   @IsString()
   @MaxLength(1500)
-  @ApiPropertyOptional({ example: 'Мои желания' })
-  @IsOptional()
+  @ApiPropertyOptional({ default: 'Мои желания' })
   description: string;
 
   @IsArray()
