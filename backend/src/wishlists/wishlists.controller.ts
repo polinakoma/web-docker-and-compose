@@ -19,7 +19,7 @@ import { AuthUser } from '../common/user.decorator';
 import { User } from '../users/entities/user.entity';
 
 @ApiTags('Wishlists')
-@Controller('wishlists')
+@Controller('wishlistlists')
 export class WishlistsController {
   constructor(private readonly wishlistsService: WishlistsService) {}
 
