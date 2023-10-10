@@ -14,11 +14,11 @@ export class CreateWishlistDto {
   @ApiPropertyOptional({ example: 'Вишлист' })
   name: string;
 
-  // @IsString()
-  // @MaxLength(1500)
-  // @ApiPropertyOptional({ example: 'Мои желания' })
-  // @IsOptional()
-  // description: string;
+  @IsString()
+  @MaxLength(1500)
+  @ApiPropertyOptional({ example: 'Мои желания' })
+  @IsOptional()
+  description: string;
 
   @IsArray()
   @IsOptional()
