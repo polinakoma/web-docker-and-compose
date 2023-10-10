@@ -41,7 +41,7 @@ export class Wishlist {
   @Column()
   @MaxLength(1500)
   @IsString()
-  @ApiProperty({ example: 'Мои желания' })
+  @IsOptional({ default: 'Мои желания' })
   description: string;
 
   @Column()
@@ -58,3 +58,4 @@ export class Wishlist {
   @IsOptional()
   items: Wish[];
 }
+
